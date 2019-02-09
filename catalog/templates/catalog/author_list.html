@@ -1,0 +1,23 @@
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+    <h1>Author List</h1>
+
+    {% if author_list %}
+    <ul>
+
+      {% for author in author_list %}
+      <li>
+      <h3>Author   {{author.first_name}}</h3>
+      <p>Author Last Name:  {{author.last_name}}</p>
+      <p>Author date_of_birth:  {{author.date_of_birth}}</p>
+      <p>Author date_of_death:  {{author.date_of_death}}</p>
+      <hr>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no author in the library.</p>
+    {% endif %}
+{% endblock %}
